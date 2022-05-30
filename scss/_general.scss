@@ -1,68 +1,68 @@
-body {
+body{
   padding-bottom: 50px;
 }
 
-.picture {
+.picture{
   padding: 10px;
 }
 
-.image {
+.image{
   height: 250px;
   background: transparent;
 }
 
-.poke {
+.poke{
   font-weight: bold;
 }
 
-.chaser {
+.chaser{
   width: 50px;
   height: 50px;
   background: red;
   border-radius: 50%;
 }
 
-.runner {
+.runner{
   width: 50px;
   height: 50px;
   background: green;
   border-radius: 50%;
 }
 
-.box {
+.box{
   border: 1px solid grey;
   height: 350px;
 }
 
-.carouselContainer {
+.carouselContainer{
   background: transparent;
   height: 400px;
 }
 
-.title {
+.title{
   font-size: 1.5em;
   margin-top: 100px;
   margin-bottom: 20px;
 }
 
-.lightMode {
+.lightMode{
   background: rgb(245, 245, 245);
   color: rgb(10, 10, 10);
 }
 
-.darkMode {
+.darkMode{
   background: rgb(10, 10, 10);
   color: rgb(245, 245, 245);
 }
 
-.bigTitle {
+.bigTitle{
   font-size: 2.5em;
   margin-top: 100px;
   margin-bottom: 50px;
   text-align: center;
 }
 
-.mode {
+.mode{
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -74,19 +74,6 @@ body {
   border-radius: 50%;
 }
 
-.mode:hover {
+.mode:hover{
   cursor: pointer;
 }
-
-p {
-  display: none;
-  font-family: "Comic Sans MS", serif;
-  font-size: xx-large;
-}
-
-.row .image {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/*# sourceMappingURL=homepage.css.map */

@@ -11,7 +11,7 @@ button.addEventListener('click', () => {
 })
 
 // parallax carousel
-let imagesCarousel = ['../images/kyogre.png','../images/groudon.png','../images/mewtwo.png'] // Primal reversion kyogre just toooo clean - declare variable with value = array of the images
+let imagesCarousel = ['../images/kyogre.png', '../images/groudon.png', '../images/mewtwo.png'] // Primal reversion kyogre just toooo clean - declare variable with value = array of the images
 let imagesContainer = document.getElementById('carouselContainer');
 let activeImage = 0; // index of array - start from first item in array
 
@@ -22,16 +22,68 @@ imagesContainer.style.backgroundAttachment = 'fixed'
 imagesContainer.style.backgroundPosition = 'center'
 // imagesContainer.style.transition = 'all 2s'
 
-setInterval(rotate,2500) // images change every 2,5 seconds
-function rotate (){ // function to rotate between images
-    if(activeImage<imagesCarousel.length-1){ // if statement to start from image zero once 3 elements in array is reached -> [0,1,2] so length(3) - 1
+setInterval(rotate, 2500) // images change every 2,5 seconds
+function rotate() { // function to rotate between images
+    if (activeImage < imagesCarousel.length - 1) { // if statement to start from image zero once 3 elements in array is reached -> [0,1,2] so length(3) - 1
         activeImage++ // to go to next image ++ means the same as +1
         imagesContainer.style.backgroundImage = `url(${imagesCarousel[activeImage]})` // call the array for next image
-    }
-    else{
-        activeImage = 0 // reset images to start from 0
+    } else {
+        activeImage = 0 // reset images to start from 0 when last image in array is reached
         imagesContainer.style.backgroundImage = `url(${imagesCarousel[activeImage]})` // call the array to start from 0 again
     }
+}
+
+// collage
+/*let imagesCollage = ['../images/1.png', '../images/2.png', '../images/3.png', '../images/4.png', '../images/5.png', '../images/6.png', '../images/7.png', '../images/8.png', '../images/9.png', '../images/10.png', '../images/11.png', '../images/12.png', '../images/13.png', '../images/14.png', '../images/15.png', '../images/16.png']
+// I am leaving this here to remind myself how much of a fool I would be doing it this way...
+let collageContainer1 = document.getElementById('1')
+let collageImage1 = 0;
+collageContainer1.style.backgroundImage = `url(${imagesCollage[collageImage1]})`
+collageContainer1.style.backgroundRepeat = 'no-repeat'
+collageContainer1.style.backgroundPosition = 'center'
+collageContainer1.style.backgroundSize = 'cover'
+
+let collageContainer2 = document.getElementById('2')
+let collageImage2 = 1;
+collageContainer2.style.backgroundImage = `url(${imagesCollage[collageImage2]})`
+collageContainer2.style.backgroundRepeat = 'no-repeat'
+collageContainer2.style.backgroundPosition = 'center'
+collageContainer2.style.backgroundSize = 'cover'
+
+let collageContainer3 = document.getElementById('3')
+let collageImage3 = 2;
+collageContainer3.style.backgroundImage = `url(${imagesCollage[collageImage3]})`
+collageContainer3.style.backgroundRepeat = 'no-repeat'
+collageContainer3.style.backgroundPosition = 'center'
+collageContainer3.style.backgroundSize = 'cover'
+
+let collageContainer4 = document.getElementById('4')
+let collageImage4 = 3;
+collageContainer4.style.backgroundImage = `url(${imagesCollage[collageImage4]})`
+collageContainer4.style.backgroundRepeat = 'no-repeat'
+collageContainer4.style.backgroundPosition = 'center'
+collageContainer4.style.backgroundSize = 'cover'
+*/
+
+let collageContainer = document.getElementsByClassName('image');
+for(let i=0; i<collageContainer.length; i++){
+    let img = document.createElement('img')
+    let click = false;
+    img.src = `../images/${i+1}.png`
+    img.style.width = '100%'
+    img.addEventListener('click', function (){
+        this.style.transform = 'scale(1.1)'
+        document.getElementById(`p${i+1}`).style.display = 'block'
+        document.getElementById(`p${i+1}`).style.position = 'absolute'
+        document.getElementById(`p${i+1}`).style.zIndex = '42069'
+        if (!click){
+            this.addEventListener("mouseout", function (){
+                this.style.transform = 'scale(1)'
+                document.getElementById(`p${i+1}`).style.display = 'none'
+            })
+        }
+    })
+    collageContainer[i].appendChild(img)
 }
 
 // random letters
