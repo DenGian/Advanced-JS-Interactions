@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="css/homepage.css" rel="stylesheet" type="text/css">
 </head>
-<body class="lightMode">
+<body class="darkMode">
 <section class="main container">
     <div class="row intro">
         <div class="col-12 bigTitle">JS Interactivity</div>
@@ -14,7 +14,7 @@
     </div>
     <div class="row carousel">
         <div class="col-12 title">I want a working parallax carousel here! Controls are optional.</div>
-        <div class="col-12 carouselContainer"></div>
+        <div class="col-12 carouselContainer" id="carouselContainer"></div>
     </div>
     <div class="row collage">
         <div class="col-12 title">I want a collage here, and if I click the image, it will enlarge and give me a short description!</div>
@@ -337,7 +337,7 @@
         </div>
     </div>
 </section>
-<div class="mode">💡</div>
+<div class="mode" id="switch">💡</div>
 <script src="scripts/script.js"></script>
 </body>
 </html>

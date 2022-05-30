@@ -35,8 +35,9 @@ body{
 }
 
 .carouselContainer{
-    background: royalblue;
+    background:  rgb(10, 10, 10);
     height: 400px;
+    transition: 2s;
 }
 
 .title{
