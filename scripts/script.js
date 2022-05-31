@@ -11,7 +11,7 @@ button.addEventListener('click', () => {
 })
 
 // parallax carousel
-let imagesCarousel = ['../images/kyogre.png', '../images/groudon.png', '../images/mewtwo.png'] // Primal reversion kyogre just toooo clean - declare variable with value = array of the images
+let imagesCarousel = ['./images/kyogre.png', './images/groudon.png', './images/mewtwo.png'] // Primal reversion kyogre just toooo clean - declare variable with value = array of the images
 let imagesContainer = document.getElementById('carouselContainer');
 let activeImage = 0; // index of array - start from first item in array
 
@@ -66,25 +66,45 @@ collageContainer4.style.backgroundSize = 'cover'
 */
 
 let collageContainer = document.getElementsByClassName('image');
-for(let i=0; i<collageContainer.length; i++){
+for (let i = 0; i < collageContainer.length; i++) {
     let img = document.createElement('img')
     let click = false;
-    img.src = `../images/${i+1}.png`
+    img.src = `./images/${i + 1}.png`
     img.style.width = '100%'
-    img.addEventListener('click', function (){
+    img.addEventListener('click', function () {
         this.style.transform = 'scale(1.1)'
-        document.getElementById(`p${i+1}`).style.display = 'block'
-        document.getElementById(`p${i+1}`).style.position = 'absolute'
-        document.getElementById(`p${i+1}`).style.zIndex = '42069'
-        if (!click){
-            this.addEventListener("mouseout", function (){
+        document.getElementById(`p${i + 1}`).style.display = 'block'
+        document.getElementById(`p${i + 1}`).style.position = 'absolute'
+        document.getElementById(`p${i + 1}`).style.zIndex = '42069'
+        if (!click) {
+            this.addEventListener("mouseout", function () {
                 this.style.transform = 'scale(1)'
-                document.getElementById(`p${i+1}`).style.display = 'none'
+                document.getElementById(`p${i + 1}`).style.display = 'none'
             })
         }
     })
     collageContainer[i].appendChild(img)
 }
+
+// hover pokemon name
+let show = document.querySelectorAll('.poke') // to get the classes .poke
+console.log(show);
+show.forEach((name) => { // forEach function, because 4 images
+    name.addEventListener('mouseover', () => {
+        let image = new Image(); // built-in js function
+        image.src = `./images/${name.innerText}.png`; // path in the images
+        image.style.position = 'absolute'; // no interference with the text
+        image.style.left = '0%';
+        image.style.transform = 'translateY(-100%)'; // images above text
+        image.style.height = '400%' // height of images
+        name.appendChild(image) //appends image as last child of the element
+    })
+})
+show.forEach((name) => { // function to make images disappear when mouse left
+    name.addEventListener('mouseleave', () => {
+        name.innerHTML = name.innerText;
+    })
+})
 
 // random letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
