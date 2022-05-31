@@ -139,3 +139,35 @@ function randomLetter() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
     return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
+
+let letter = document.querySelectorAll('.letter');
+let box = document.getElementsByClassName('box')[2];
+
+// keypress make letters disappear
+document.addEventListener('keyup', (event)=>{
+    let key = event.key
+    for (let i = 0; i<letter.length; i++)
+    if (letter[i].innerText === key){
+        letter[i].innerText = ""
+    }
+    else if (key === "Enter"){
+        Array.from(document.querySelectorAll(".letter")).forEach(el => {
+            el.innerText = randomLetter();
+        });
+    }
+})
+// background change, it's a feature, not a bug
+box.addEventListener('mouseenter',() => {
+    box.style.color = "#" + randomColor;
+    randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    box.style.backgroundColor = "#" + randomColor;
+    randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    box.style.transform = "rotate(45deg)";
+});
+
+box.addEventListener('mouseleave', ()=>{
+    box.style.color = "";
+    box.style.backgroundColor = "";
+    randomColor = Math.floor(Math.random()*16777215).toString(16);
+    box.style.transform = "rotate(0)"
+})

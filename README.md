@@ -19,24 +19,27 @@ And many more
 
 ---
 ### Goals
-* A parallax carousel
-* A collage with popup for more details
-* Hover image above every Pokemon in the text
-* Functional chaser or runner circle
+- [x] A parallax carousel
+- [x] A collage with popup for more details
+- [x] Hover image above every Pokemon in the text
+- [x] Functional chaser or runner circle
 
 ---
 ### Nice to haves
-* Chaser AND runner circle are functional
-* Lightmode / Darkmode switch
-* Final letter challenge completed!
+- [x] Chaser AND runner circle are functional
+- [x] Lightmode / Darkmode switch
+- [] Final letter challenge completed!
 
 ---
 ### To-Do
-
+- [] put comments
+- [] Update readme
 ---
 ### Reflection Time
 
+
 ---
 ### Useful resources 
+* 
 
 ---
