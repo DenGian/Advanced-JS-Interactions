@@ -30,11 +30,13 @@ body{
   height: 50px;
   background: green;
   border-radius: 50%;
+  position: absolute;
 }
 
 .box{
   border: 1px solid grey;
   height: 350px;
+  position:relative;
 }
 
 .carouselContainer{

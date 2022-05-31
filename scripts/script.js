@@ -73,17 +73,17 @@ for (let i = 0; i < collageContainer.length; i++) {
     img.style.width = '100%'
     img.addEventListener('click', function () {
         this.style.transform = 'scale(1.1)'
-        document.getElementById(`p${i + 1}`).style.display = 'block'
-        document.getElementById(`p${i + 1}`).style.position = 'absolute'
-        document.getElementById(`p${i + 1}`).style.zIndex = '42069'
+        document.getElementById(`p${i + 1}`).style.display = 'block';
+        document.getElementById(`p${i + 1}`).style.position = 'absolute';
+        document.getElementById(`p${i + 1}`).style.zIndex = '42069';
         if (!click) {
             this.addEventListener("mouseout", function () {
-                this.style.transform = 'scale(1)'
-                document.getElementById(`p${i + 1}`).style.display = 'none'
+                this.style.transform = 'scale(1)';
+                document.getElementById(`p${i + 1}`).style.display = 'none';
             })
         }
     })
-    collageContainer[i].appendChild(img)
+    collageContainer[i].appendChild(img);
 }
 
 // hover pokemon name
@@ -96,8 +96,8 @@ show.forEach((name) => { // forEach function, because 4 images
         image.style.position = 'absolute'; // no interference with the text
         image.style.left = '0%';
         image.style.transform = 'translateY(-100%)'; // images above text
-        image.style.height = '400%' // height of images
-        name.appendChild(image) //appends image as last child of the element
+        image.style.height = '400%'; // height of images
+        name.appendChild(image); //appends image as last child of the element
     })
 })
 show.forEach((name) => { // function to make images disappear when mouse left
@@ -117,12 +117,18 @@ function follow(e){
 }
 
 // runner
-/* let runner = document.getElementsByClassName('runner')[0];
-document.getElementsByClassName('box')[1].addEventListener('mousemove',function (e){
-    runner.style.left = e.pageX-25+'px';
-    runner.style.top = e.pageY-25+'px';
-}) */
+let runnerBox = document.getElementsByClassName('box')[1];
+let runner = document.querySelector('.runner');
+let width = runnerBox.clientWidth - 50;
+let height = runnerBox.clientHeight - 50;
 
+runnerBox.addEventListener('mouseover', weglopenJonge);
+function weglopenJonge() {
+    let randomWidth = Math.floor(Math.random()*width+1);
+    let randomHeight = Math.floor(Math.random()*height+1);
+    runner.style.left = `${randomWidth}px`;
+    runner.style.top = `${randomHeight}`+'px';
+}
 
 // random letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
