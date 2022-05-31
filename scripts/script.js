@@ -106,6 +106,24 @@ show.forEach((name) => { // function to make images disappear when mouse left
     })
 })
 
+// chaser
+document.getElementsByClassName('box')[0].addEventListener('mousemove', follow);
+let chaser = document.querySelector('.chaser');
+
+function follow(e){
+    chaser.style.visibility = 'visible';
+    chaser.style.left = e.pageX - 25 + 'px';
+    chaser.style.top = e.pageY - 25 + 'px';
+}
+
+// runner
+/* let runner = document.getElementsByClassName('runner')[0];
+document.getElementsByClassName('box')[1].addEventListener('mousemove',function (e){
+    runner.style.left = e.pageX-25+'px';
+    runner.style.top = e.pageY-25+'px';
+}) */
+
+
 // random letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
     el.innerText = randomLetter();
